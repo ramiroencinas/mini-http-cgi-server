@@ -28,6 +28,6 @@ Use:
 
 - run web-client in http://localhost:3000
 
-- enjoy ajax and CGI!
+- enjoy CGI and AJAX!
 
 NOTE: don't use in production environments!
