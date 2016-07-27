@@ -17,16 +17,17 @@ And doesn't implements:
 - Client information beyond HTTP headers and POST payload.
 - Security.
 
-Required modules:
+Required Perl6 modules:
 
 - URI;
 - URI::Escape;
 
 Use:
 
-perl6 mini-http-cgi-server.pl6
+- perl6 mini-http-cgi-server.pl6
 
-run web-client in http://localhost:3000
-enjoy ajax and CGI!
+- run web-client in http://localhost:3000
+
+- enjoy ajax and CGI!
 
 NOTE: don't use in production environments!
