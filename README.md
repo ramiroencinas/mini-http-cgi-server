@@ -5,8 +5,10 @@ A basic HTTP & CGI implementation using Perl 6 and IO::Socket::Async to allow mu
 
 Currently only implements:
 
-- 200 and 404 HTTP status response codes.
+- 200, 400, 404 and 413 HTTP status response codes.
 - GET and POST HTTP methods.
+- Binary socket processing.
+- Encoding to UTF-8 by default.
 - Pseudo-CGI scripts via Perl6 Modules (lib/CGI).
 - Live logs via stdout.
 
