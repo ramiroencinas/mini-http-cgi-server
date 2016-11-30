@@ -7,7 +7,7 @@ Currently only implements:
 
 - 200, 400, 404 and 413 HTTP status response codes.
 - GET and POST HTTP methods.
-- Binary socket processing.
+- Binary data socket processing.
 - Encoding to UTF-8 by default.
 - Pseudo-CGI scripts via Perl6 Modules (lib/CGI).
 - Live logs via stdout.
