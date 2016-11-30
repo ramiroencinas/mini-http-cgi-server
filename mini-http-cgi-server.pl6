@@ -11,7 +11,7 @@ use lib 'lib';
 use CGI::webService1;
 
 # init vars
-my $listen-server-host  = "localhost";
+my $listen-server-host  = "0.0.0.0";
 my $listen-port         = 3000;
 my $default-public-file = "index.html";
 my $public-dir = "./public";
