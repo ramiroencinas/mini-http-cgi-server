@@ -22,6 +22,7 @@ my $http-header_400 = "HTTP/1.1 400 Bad Request" ~ $nl ~ "Content-Type: text/htm
 my $http-header_404 = "HTTP/1.1 404 Not Found" ~ $nl ~ "Content-Type: text/html;charset=utf-8" ~ $nel ~ "<h3>Not Found</h3>";
 my $http-header_413 = "HTTP/1.1 413 Request Entity Too Large" ~ $nl ~ "Content-Type: text/html;charset=utf-8" ~ $nel ~ "<h3>Request Entity Too Large</h3>";
 my $max-size-bytes-http-entity = 104857600; # 100mb
+%*ENV{'RAKUDO_MAX_THREADS'} = 50; # max of threads for concurrency tasks (16 by default)
 
 # check default-public-file
 if !($public-dir ~ "/" ~ $default-public-file).IO.e { die "Default public file not found."; }
@@ -57,7 +58,7 @@ sub process ($buf) {
   my $headers = $buf.subbuf(0, $i).decode('UTF-8');
   my $body = $buf.subbuf($i, $buf.elems).decode('UTF-8');
 
-  # getting common headers
+  # initialize method, uri and protocol info from headers
   my ($method, $uri-full, $protocol) = "";
 
   # assign http method, full uri and http protocol version
@@ -100,6 +101,7 @@ sub process ($buf) {
       $response ~= slurp $public-dir ~ $path;
     }
   }
+
   return $response.encode('UTF-8');
 }
 
