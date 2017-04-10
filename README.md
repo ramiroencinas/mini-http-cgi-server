@@ -32,4 +32,6 @@ Use:
 
 - enjoy CGI and AJAX!
 
+- Stress the server with client.pl6
+
 NOTE: don't use in production environments!
