@@ -16,8 +16,10 @@ if !($public-dir ~ "/" ~ $default-public-file).IO.e { die "Default public file n
 # concurrent loop for listen, incoming processing and response
 react {
   say $listening-message;
+  # creates listening socket and return $conn as a Supply
   whenever IO::Socket::Async.listen($listen-server-host,$listen-port) -> $conn {
-    # tapping incoming requests in binary format (blob)
+    # when a TCP stream arrives at the $conn Supply,
+    # it converts it in binary format (blob) with the :bin named parameter
     whenever $conn.Supply(:bin) -> $buf {
       my $response = response $buf;
       say "*Response data:*\n" ~ $response;
