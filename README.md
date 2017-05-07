@@ -1,4 +1,6 @@
 # mini-http-cgi-server
+(This project now is Wap6. Please, go to https://github.com/ramiroencinas/wap6)
+
 HTTP & CGI Server Proof of Concept
 
 A basic HTTP & CGI implementation using Perl 6 and IO::Socket::Async to allow multithreading.
